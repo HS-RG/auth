@@ -1,0 +1,22 @@
+#数据库链接配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/auth
+    username: root
+    password: Wxl5211314.0.
+
+    application:
+      name: auth #服务名称
+    cloud:
+      nacos:
+        server-addr: localhost:8848 #nginx代理nacos注册中心
+
+#mybatis配置（控制台输出，驼峰命名自动匹配）
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+server:
+  port: 8081 #端口
