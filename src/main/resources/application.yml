@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/auth
+    url: jdbc:mysql://localhost:3306/auth?useSSL=false #mysql地址，useSSL需要显式设置为false否则报错
     username: root
     password: Wxl5211314.0.
   application:
