@@ -5,10 +5,7 @@ import com.hsrg.pojo.Result;
 import com.hsrg.service.AuthService;
 import com.hsrg.utils.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +26,7 @@ public class LoginController {
             claims.put("email",auth1.getEmail());
             claims.put("password",auth1.getPassword());
             claims.put("userId",auth1.getUserId());
+            claims.put("isAdmin",auth1.getIsAdmin());
             String jwt = JwtUtils.generateJwt(claims);
             return Result.success(jwt);
         }

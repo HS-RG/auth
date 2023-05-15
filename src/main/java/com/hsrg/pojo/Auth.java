@@ -11,4 +11,5 @@ public class Auth {
     private Long userId;
     private String email;
     private String password;
+    private Boolean isAdmin;
 }
