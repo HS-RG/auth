@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface AuthMapper {
 
-    @Select("select * from auth where email=#{email} and password=#{password}")
+    @Select("select * from auth where username=#{username} and password=#{password}")
     Auth getByEmailAndPassword(Auth auth);
 }

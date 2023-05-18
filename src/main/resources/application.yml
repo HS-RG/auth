@@ -3,10 +3,10 @@ server:
 #数据库链接配置
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/auth?useSSL=false #mysql地址，useSSL需要显式设置为false否则报错
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://8.130.22.177:3306/auth?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
-    password: Wxl5211314.0.
+    password: xj246728
   application:
     name: auth #服务名称
   cloud: #要注意缩进，错了会无法注册
