@@ -34,6 +34,12 @@
             <artifactId>jjwt</artifactId>
             <version>0.9.1</version>
         </dependency>
+<!--        jwt前置-->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.0</version>
+        </dependency>
 <!--        mybatis-->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
@@ -43,6 +49,22 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+<!--        openfeign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+<!--        本地feign-->
+        <dependency>
+            <groupId>com.hsrg</groupId>
+            <artifactId>feign</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+<!--        loadbalancer-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
     </dependencies>
 
