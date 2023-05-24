@@ -18,15 +18,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
+        <!--        雪花算法-->
+        <dependency>
+            <groupId>wiki.xsx</groupId>
+            <artifactId>snowflake-spring-boot-starter</artifactId>
+            <version>RELEASE</version>
+        </dependency>
 <!--        nacos-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-<!--        springbootweb,版本见父工程-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 <!--        jwt-->
         <dependency>
@@ -50,22 +51,13 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-<!--        openfeign-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
 <!--        本地feign-->
         <dependency>
             <groupId>com.hsrg</groupId>
             <artifactId>feign</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-<!--        loadbalancer-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-        </dependency>
+
     </dependencies>
 
 </project>
