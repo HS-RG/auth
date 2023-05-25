@@ -25,8 +25,8 @@ public class LoginController {
         if(auth1!=null){
             Map<String, Object> claims=new HashMap<>();
             claims.put("username",auth1.getUsername());
-            claims.put("password",auth1.getPassword());
             claims.put("userId",auth1.getUserId());
+            claims.put("isAdmin",auth1.getIsAdmin());
             String jwt = JwtUtils.generateJwt(claims);
             Map data=new HashMap<>();
             data.put("token",jwt);
@@ -43,8 +43,8 @@ public class LoginController {
         if(auth1!=null){
             Map<String, Object> claims=new HashMap<>();
             claims.put("username",auth1.getUsername());
-            claims.put("password",auth1.getPassword());
             claims.put("userId",auth1.getUserId());
+            claims.put("isAdmin",auth1.getIsAdmin());
             String jwt = JwtUtils.generateJwt(claims);
             Map data=new HashMap<>();
             data.put("token",jwt);
