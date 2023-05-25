@@ -31,7 +31,7 @@ public class RegisterServiceImpl implements RegisterService {
             auth.setIsAdmin(false);
             auth.setUserId(snowflake.nextId());
             authInsert.insertAuth(auth);
-            User user = new User(auth.getUserId(),auth.getUsername(),null,auth.getUpdateTime(),auth.getCreateTime());
+            User user = new User(auth.getUserId(),auth.getUsername(),auth.getUsername(),null,auth.getUpdateTime(),auth.getCreateTime());
             userClient.initOneUser(user);
             return auth;
         }
