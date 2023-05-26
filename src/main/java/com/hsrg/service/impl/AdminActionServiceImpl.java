@@ -1,6 +1,23 @@
 package com.hsrg.service.impl;
 
+import com.hsrg.clients.UserClient;
+import com.hsrg.mapper.AuthDelete;
+import com.hsrg.pojo.User;
 import com.hsrg.service.AdminActionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AdminActionServiceImpl implements AdminActionService {
+
+    @Autowired
+    private UserClient userClient;
+    @Autowired
+    private AuthDelete authDelete;
+
+    @Override
+    public void logOff(User user) {
+        authDelete.deleteAuthByUserId(user.getUserId().toString());
+        userClient.deleteOneUser(new User(user.getUserId(),null,null,null,null,null));
+    }
 }
