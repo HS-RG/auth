@@ -33,6 +33,7 @@ public class RegisterController {
             String jwt = JwtUtils.generateJwt(claims);
             Map data=new HashMap<>();
             data.put("token",jwt);
+            data.put("userId",auth1.getUserId());
             return ResponseEntity.status(200).body(Result.success(data));
         }
         else {
