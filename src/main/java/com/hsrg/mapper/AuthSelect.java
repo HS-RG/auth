@@ -15,4 +15,7 @@ public interface AuthSelect {
 
     @Select("select * from auth where username=#{username} and password=#{password} and is_admin=1")
     Auth getAdminByUsernameAndPassword(Auth auth);
+
+    @Select("select is_admin from auth where user_id=#{userId}")
+    Boolean getIsAdminByUserId(Long userId);
 }
