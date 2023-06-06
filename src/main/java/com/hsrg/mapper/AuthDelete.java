@@ -6,6 +6,6 @@ import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface AuthDelete {
 
-    @Update("update auth set username=#{userId}")
+    @Update("update auth set username=#{userId} where user_id=#{userId}")
     void deleteAuthByUserId(String userId);
 }
