@@ -9,4 +9,6 @@ public interface AdminActionService {
     Boolean queryIsAdmin(Long userId);
 
     Boolean setIsAdmin(Auth auth);
+
+    void resetPassword(Auth auth, String jwt);
 }

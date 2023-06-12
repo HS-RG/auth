@@ -7,10 +7,7 @@ import com.hsrg.pojo.User;
 import com.hsrg.service.AdminActionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
@@ -34,4 +31,11 @@ public class AdminActionController {
     public Result setIsAdmin(@RequestBody Auth auth){
         return Result.success(adminActionService.setIsAdmin(auth));
     }
+
+    @PostMapping("/resetPassword")
+    public Result resetPassword(@RequestBody Auth auth, @RequestHeader("Authorization")String jwt){
+        adminActionService.resetPassword(auth,jwt);
+        return Result.success();
+    }
+
 }

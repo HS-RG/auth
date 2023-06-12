@@ -7,6 +7,8 @@ import com.hsrg.mapper.AuthUpdate;
 import com.hsrg.pojo.Auth;
 import com.hsrg.pojo.User;
 import com.hsrg.service.AdminActionService;
+import com.hsrg.utils.JwtUtils;
+import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,5 +39,11 @@ public class AdminActionServiceImpl implements AdminActionService {
     public Boolean setIsAdmin(Auth auth) {
         authUpdate.updateIsAdminByUserId(auth);
         return authSelect.getIsAdminByUserId(auth.getUserId());
+    }
+
+    @Override
+    public void resetPassword(Auth auth, String jwt) {
+        Claims claims = JwtUtils.parseJWT(jwt);
+        authUpdate.updatePassword(auth.getPassword(),(Long)claims.get("userId"));
     }
 }
